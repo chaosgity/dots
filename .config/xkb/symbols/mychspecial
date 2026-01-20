@@ -1,0 +1,96 @@
+default partial xkb_symbols "basic" {
+    name[Group1]= "German (Switzerland, customizations)";
+    include "ch"
+    include "mychspecial(CapsLockToEsc)"
+    include "mychspecial(arrows)"
+
+
+    // FOUR_LEVEL key type example from latin symbols
+
+
+   key <TLDE> { [     section,     degree                             ] };
+   key <AE01> { [           1,       plus,    brokenbar               ] };
+   key <AE02> { [           2,   quotedbl,           at               ] };
+   key <AE03> { [           3,   asterisk,   numbersign               ] };
+   key <AE04> { [           4,   ccedilla                             ] };
+   key <AE05> { [           5,    percent                             ] };
+   key <AE06> { [           6,  ampersand,      notsign               ] };
+   key <AE07> { [           7,      slash,          bar               ] };
+   key <AE08> { [           8,  parenleft,         cent               ] };
+   key <AE09> { [           9, parenright                             ] };
+   key <AE10> { [           0,      equal                             ] };
+   key <AE11> { [  apostrophe,   question,        acute               ] };
+   key <AE12> { [ asciicircum,      grave,   asciitilde               ] };
+
+   key <AD01> { [           q,          Q                             ] };
+   key <AD02> { [           w,          W                             ] };
+   key <AD03> { [           e,          E,     EuroSign               ] };
+   key <AD04> { [           r,          R                             ] };
+   key <AD05> { [           t,          T                             ] };
+   key <AD06> { [           z,          Z                             ] };
+   key <AD07> { [           u,          U,   udiaeresis,   Udiaeresis ] };
+   key <AD08> { [           i,          I,          bar,          bar ] };
+   key <AD09> { [           o,          O,   odiaeresis,   Odiaeresis ] };
+   key <AD10> { [           p,          P                             ] };
+   key <AD11> { [  udiaeresis,     egrave,  bracketleft,   Udiaeresis ] };
+   key <AD12> { [   diaeresis,     exclam, bracketright,   apostrophe ] };
+
+   key <AC01> { [           a,          A,   adiaeresis,   Adiaeresis ] };
+   key <AC02> { [           s,          S,       ssharp,        U1E9E ] };
+   key <AC03> { [           d,          D                             ] };
+   key <AC04> { [           f,          F                             ] };
+   key <AC05> { [           g,          G                             ] };
+   key <AC06> { [           h,          H,         Left               ] };
+   key <AC07> { [           j,          J,         Down               ] };
+   key <AC08> { [           k,          K,           Up               ] };
+   key <AC09> { [           l,          L,        Right               ] };
+   key <AC10> { [  odiaeresis,     eacute,     ellipsis,   Odiaeresis ] };
+   key <AC11> { [  adiaeresis,     agrave,    braceleft,   Adiaeresis ] };
+   key <BKSL> { [      dollar,   sterling,   braceright,     quotedbl ] };
+
+   key <LSGT> { [      Escape,     Escape,       Escape,       Escape ] };
+   key <AB01> { [           y,          Y                             ] };
+   key <AB02> { [           x,          X                             ] };
+   key <AB03> { [           c,          C                             ] };
+   key <AB04> { [           v,          V                             ] };
+   key <AB05> { [           b,          B                             ] };
+   key <AB06> { [           n,          N,         less,      greater ] };
+   key <AB07> { [           m,          M,    braceleft,   braceright ] };
+   key <AB08> { [       comma,  semicolon,  bracketleft, bracketright ] };
+   key <AB09> { [      period,      colon,    parenleft,   parenright ] };
+   key <AB10> { [       minus, underscore,        slash,    backslash ] };
+
+
+
+ key <CAPS> { [ ISO_Level3_Shift, ISO_Level3_Latch, latchToLock ], actions = [ LatchMods(modifiers=LevelThree,clearLocks,latchToLock) ] };
+ 
+ key <LCTL> { [ ISO_Level3_Shift, ISO_Level3_Latch, latchToLock ], actions = [ LatchMods(modifiers=Control,clearLocks,latchToLock) ] };
+
+ key <LWIN> { [ ISO_Level3_Shift, ISO_Level3_Latch, latchToLock ], actions = [ LatchMods(modifiers=Mod4,clearLocks,latchToLock) ] };
+
+
+};
+
+
+hidden partial modifier_keys
+xkb_symbols "CapsLockToEsc" {
+    replace key <ESC> { [ Caps_Lock ], type[group1] = "ONE_LEVEL" };
+};
+
+
+partial keypad_keys
+xkb_symbols "arrows" {
+   //                               ⇙ ⇓ ⇘   ↙ ↓ ↘
+   // Level         1         2       3       4
+   // ------------------------------------------------
+   key <KP0> {[  KP_Insert , KP_0 , U21C5 , U21C4  ]};
+   key <KP1> {[  KP_End    , KP_1 , U21D9 , U2199  ]};
+   key <KP2> {[  KP_Down   , KP_2 , U21D3 , U2193  ]};
+   key <KP3> {[  KP_Next   , KP_3 , U21D8 , U2198  ]};
+   key <KP4> {[  KP_Left   , KP_4 , U21D0 , U2190  ]};
+   key <KP5> {[  KP_Begin  , KP_5 , U21BA , U21BB  ]};
+   key <KP6> {[  KP_Right  , KP_6 , U21D2 , U2192  ]};
+   key <KP7> {[  KP_Home   , KP_7 , U21D6 , U2196  ]};
+   key <KP8> {[  KP_Up     , KP_8 , U21D1 , U2191  ]};
+   key <KP9> {[  KP_Prior  , KP_9 , U21D7 , U2197  ]};
+};
