@@ -1,0 +1,4 @@
+function l() {
+sed -i 's/catppuccin-macchiato/catppuccin-latte/' /home/chaos/.config/yazi/theme.toml
+}
+
