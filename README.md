@@ -1,1 +1,1 @@
-How my dotfiles are configured.
+How my dotfiles are configured respectively my HOME-directory.
