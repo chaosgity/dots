@@ -1,0 +1,96 @@
+kbd
+
+man keymaps man loadkeys man dumpkeys man showkey
+dumpkeys -l | less
+
+
+cd /usr/share/kbd/keymaps/
+
+sudo nvim /etc/vconsole.conf
+KEYMAP=sg
+XKBLAYOUT=ch
+
+sudo nvim /usr/share/kbd/keymaps/i386/qwertz/sg.map.gz
+
+
+sudo nvim /usr/share/kbd/keymaps/i386/include/mysticky.map
+keymaps 0-15
+#keycode 29 = SCtrl
+keycode 42 = SShift
+keycode 54 = SShift
+#keycode 56 = SAlt
+#keycode 97 = SCtrl
+keycode 100 = SAltGr 
+
+
+
+sudo nvim /usr/share/kbd/keymaps/i386/include/mylock.map
+keymaps 0-15
+keycode 29 = Control_Lock
+keycode 42 = Shift_Lock
+keycode 56 = Alt_Lock
+
+
+
+sudo nvim /usr/share/kbd/keymaps/i386/include/mychspecial.map
+keymaps 0-3
+
+keycode 1 = Caps_Lock
+keycode 41 = section degree
+keycode 2 = one plus brokenbar
+keycode 3 = two quotedbl at
+keycode 4 = three asterisk numbersign
+keycode 5 = four ccedilla onequarter
+keycode 6 = five percent onehalf
+keycode 7 = six ampersand notsign
+keycode 8 = seven slash bar
+keycode 9 = eight parenleft cent
+keycode 10 = nine parenright
+keycode 11 = zero equal
+keycode 12 = apostrophe question acute
+keycode 13 = circumflex grave tilde
+keycode 22 = u U udiaeresis Udiaeresis
+keycode 24 = o O odiaeresis Odiaeresis
+keycode 30 = a A adiaeresis Adiaeresis
+keycode 35 = h H Left
+keycode 36 = j J Down
+keycode 37 = k K Up
+keycode 38 = l L Right
+keycode 49 = n N less greater
+keycode 50 = m M braceleft braceright
+keycode 51 = comma semicolon bracketleft bracketright
+keycode 52 = period colon parenleft parenright
+keycode 53 = minus underscore slash backslash
+
+keycode 58 = AltGr
+keycode 86 = Escape Escape Escape Escape
+
+
+
+sudo nvim /usr/share/kbd/keymaps/i386/include/myusspecial.map
+keymaps 0-3
+
+keycode 13 = grave tilde dead_circumflex
+keycode 2 = one exclam brokenbar plus
+keycode 3 = two at at quotedbl
+keycode 4 = three numbersign numbersign asterisk
+keycode 5 = four dollar onequarter ccedilla
+keycode 6 = five percent onehalf percent
+keycode 7 = six circumflex notsign ampersand
+keycode 8 = seven ampersand bar slash
+keycode 9 = eight asterisk cent parenleft
+keycode 10 = nine parenleft bracketright parenright
+keycode 11 = zero parenright braceright equal
+keycode 22 = u U udiaeresis Udiaeresis
+keycode 24 = o O odiaeresis Odiaeresis
+keycode 30 = a A adiaeresis Adiaeresis
+
+
+
+sudo nvim /usr/share/kbd/keymaps/i386/qwertz/sg.map.gz
+(…)
+include "mychspecial.map"
+include "mysticky.map"
+
+
+sudo loadkeys keymap
