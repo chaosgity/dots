@@ -2,9 +2,7 @@
 # ~/.bashrc
 #
 
-# ADDED VIA ANSIBLE
-# ADDED VIA ANSIBLE
-# ADDED VIA ANSIBLE
+# ADDED VIA ANSIBLE NEW
 
 # VI-MODE
 set -o vi
